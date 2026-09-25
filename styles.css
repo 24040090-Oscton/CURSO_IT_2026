@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Fondo Azul Eléctrico a Azul Profundo */
+  background: linear-gradient(135deg, #03071e 0%, #0a192f 50%, #001f3f 100%);
+  padding: 20px;
+}
+
+/* Contenedor principal alineado */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  max-width: 880px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Columna izquierda con 2 cajas apiladas */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+/* Base de Tarjeta: Cristal Azul Translúcido con Borde Neon Cyan */
+.card {
+  background: rgba(10, 25, 47, 0.55);
+  border-radius: 20px;
+  /* Borde fino con degradado azul nítido */
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 15px 30px rgba(0, 212, 255, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Tarjetas Informativas (Izquierda) */
+.info-card {
+  padding: 25px;
+  text-align: left;
+}
+
+.info-card h3 {
+  font-size: 14px;
+  color: #00d4ff;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.skills-list {
+  list-style: none;
+}
+
+.skills-list li {
+  font-size: 13.5px;
+  color: #94a3b8;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.skills-list li strong {
+  color: #e2e8f0;
+}
+
+/* Tarjeta Principal de Perfil (Derecha) */
+.profile-card {
+  flex: 1;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 2px solid #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.profile-card h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.profile-card h2 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #38bdf8;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.profile-card p {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Botón con degradado Cyan-Azul Marino */
+.contact-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background: linear-gradient(135deg, #00d4ff 0%, #0052d4 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 20px rgba(0, 82, 212, 0.4);
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(135deg, #38bdf8 0%, #003db3 100%);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+  transform: scale(1.02);
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column-reverse;
+  }
+}
