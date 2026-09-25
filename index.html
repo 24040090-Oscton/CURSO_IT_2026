@@ -1,85 +1,587 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Presentación personal de César Sáenz, estudiante de desarrollo de software.">
-  <title>César Sáenz | Presentación</title>
-  <style>
-    :root { color-scheme: dark; --bg:#10131a; --card:#1b202b; --text:#f4f5f8; --muted:#aab3c1; --accent:#8ce5c4; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif; }
-    .wrap { width:min(1050px,calc(100% - 40px)); margin:auto; }
-    header { border-bottom:1px solid #303641; }
-    nav { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 0; }
-    .brand { font-weight:800; font-size:1.2rem; color:var(--accent); text-decoration:none; }
-    .links { display:flex; flex-wrap:wrap; gap:18px; }
-    a { color:inherit; }
-    .links a { text-decoration:none; color:var(--muted); }
-    .links a:hover, .links a:focus-visible { color:var(--accent); }
-    .hero { padding:105px 0 95px; }
-    .eyebrow { color:var(--accent); font-weight:700; letter-spacing:.13em; text-transform:uppercase; font-size:.8rem; }
-    h1 { font-size:clamp(2.8rem,8vw,5.8rem); line-height:1.08; letter-spacing:-.055em; margin:12px 0 18px; }
-    h1 span { color:var(--accent); }
-    .hero p { max-width:650px; color:var(--muted); font-size:1.17rem; }
-    .button { display:inline-block; margin-top:20px; padding:12px 22px; border:0; border-radius:10px; background:var(--accent); color:#10231d; font:inherit; font-weight:750; text-decoration:none; cursor:pointer; }
-    .button:hover { filter:brightness(1.1); }
-    section { padding:34px 0 54px; }
-    h2 { font-size:2rem; margin:0 0 18px; }
-    .intro { color:var(--muted); max-width:720px; }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:25px; }
-    .card { background:var(--card); border:1px solid #303641; border-radius:16px; padding:25px; }
-    .card h3 { margin:0 0 8px; }
-    .card p { color:var(--muted); margin:0; }
-    .tags { display:flex; flex-wrap:wrap; gap:10px; padding:0; list-style:none; }
-    .tags li { border:1px solid #425248; border-radius:999px; padding:7px 14px; color:var(--accent); }
-    footer { border-top:1px solid #303641; padding:26px 0; color:var(--muted); }
-    #saludo { min-height:1.6em; color:var(--accent); }
-    @media(max-width:700px) { .hero { padding:75px 0 55px; } .grid { grid-template-columns:1fr; } nav { align-items:flex-start; flex-direction:column; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Presentación | Tony</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        /* MENU */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* INICIO */
+
+        .inicio {
+            min-height: 100vh;
+            padding: 120px 10% 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .inicio-texto {
+            max-width: 650px;
+        }
+
+        .inicio-texto span {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .inicio-texto h1 {
+            font-size: 60px;
+            margin: 10px 0;
+        }
+
+        .inicio-texto h2 {
+            font-size: 28px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .inicio-texto p {
+            color: #cbd5e1;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 14px 25px;
+            background-color: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: translateY(-3px);
+            background-color: #7dd3fc;
+        }
+
+        /* ICONO / FOTO */
+
+        .foto {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+
+            background: linear-gradient(
+                135deg,
+                #38bdf8,
+                #2563eb
+            );
+
+            box-shadow:
+                0 0 50px rgba(56, 189, 248, 0.3);
+        }
+
+        /* SECCIONES */
+
+        section {
+            padding: 100px 10%;
+        }
+
+        .titulo {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .linea {
+            width: 60px;
+            height: 4px;
+            background-color: #38bdf8;
+            margin-bottom: 35px;
+            border-radius: 20px;
+        }
+
+        /* SOBRE MI */
+
+        .sobre-mi {
+            background-color: #111827;
+        }
+
+        .sobre-mi p {
+            max-width: 850px;
+            font-size: 18px;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* DATOS */
+
+        .datos {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .dato {
+            padding: 20px;
+            border-radius: 12px;
+            background-color: #1e293b;
+        }
+
+        .dato h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .dato p {
+            color: #cbd5e1;
+        }
+
+        /* HABILIDADES */
+
+        .habilidades-contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .habilidad {
+            padding: 25px;
+            text-align: center;
+            background-color: #1e293b;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .habilidad:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .habilidad h3 {
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
+
+        .habilidad p {
+            color: #94a3b8;
+        }
+
+        /* PROYECTOS */
+
+        .proyectos {
+            background-color: #111827;
+        }
+
+        .proyectos-contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .proyecto {
+            padding: 30px;
+            background-color: #1e293b;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .proyecto:hover {
+            transform: translateY(-6px);
+        }
+
+        .proyecto h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .proyecto p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .tecnologias {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7dd3fc;
+        }
+
+        /* OBJETIVO */
+
+        .objetivo p {
+            max-width: 850px;
+            color: #cbd5e1;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            color: #64748b;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .inicio {
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .inicio-texto h1 {
+                font-size: 45px;
+            }
+
+            .foto {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+    </style>
+
 </head>
+
 <body>
-  <header>
-    <nav class="wrap" aria-label="Navegación principal">
-      <a class="brand" href="#inicio">CS.</a>
-      <div class="links"><a href="#sobre-mi">Sobre mí</a><a href="#habilidades">Habilidades</a><a href="#contacto">Contacto</a></div>
+
+    <!-- MENU -->
+
+    <nav>
+
+        <div class="logo">
+            Tony.
+        </div>
+
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#objetivo">Objetivo</a></li>
+        </ul>
+
     </nav>
-  </header>
-  <main class="wrap">
-    <section class="hero" id="inicio">
-      <div class="eyebrow">Hola, bienvenido a mi página</div>
-      <h1>Soy César <span>Sáenz.</span></h1>
-      <p>Estudiante de Desarrollo de Software Multiplataforma. Me gusta aprender, crear proyectos útiles y seguir creciendo como desarrollador.</p>
-      <a class="button" href="#sobre-mi">Conoce más sobre mí</a>
+
+
+    <!-- INICIO -->
+
+    <section class="inicio" id="inicio">
+
+        <div class="inicio-texto">
+
+            <span>Hola, mi nombre es</span>
+
+            <h1>Tony</h1>
+
+            <h2>
+                Estudiante de Desarrollo y Gestión de Software
+            </h2>
+
+            <p>
+                Soy una persona interesada en la tecnología, la programación
+                y el desarrollo de soluciones digitales. Actualmente continúo
+                desarrollando mis conocimientos mediante proyectos académicos
+                y proyectos relacionados con sistemas de software.
+            </p>
+
+            <a href="#sobre-mi" class="boton">
+                Conocer más sobre mí
+            </a>
+
+        </div>
+
+
+        <div class="foto">
+            👨‍💻
+        </div>
+
     </section>
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p class="intro">Estoy terminando mi TSU en Desarrollo de Software Multiplataforma. He practicado con tecnologías web y busco seguir mejorando mediante proyectos reales. También tengo experiencia en atención al cliente y me interesa resolver problemas de tecnología.</p>
-      <div class="grid">
-        <article class="card"><h3>Mi formación</h3><p>TSU en Desarrollo de Software Multiplataforma.</p></article>
-        <article class="card"><h3>Lo que me gusta</h3><p>Aprender programación y convertir ideas en herramientas fáciles de usar.</p></article>
-        <article class="card"><h3>Mi objetivo</h3><p>Crecer en desarrollo de software y construir un portafolio con proyectos propios.</p></article>
-      </div>
+
+
+    <!-- SOBRE MI -->
+
+    <section class="sobre-mi" id="sobre-mi">
+
+        <h2 class="titulo">Sobre mí</h2>
+
+        <div class="linea"></div>
+
+        <p>
+            Actualmente estudio Desarrollo y Gestión de Software en la
+            Universidad Tecnológica de Coahuila.
+        </p>
+
+        <p>
+            Me gusta aprender sobre programación, bases de datos,
+            desarrollo web y nuevas tecnologías. Disfruto desarrollar
+            proyectos donde puedo aplicar mis conocimientos para resolver
+            problemas reales.
+        </p>
+
+        <p>
+            También me interesa aprender sobre infraestructura, servidores,
+            sistemas empresariales y soporte de tecnologías de información.
+        </p>
+
+
+        <div class="datos">
+
+            <div class="dato">
+                <h3>🎓 Estudios</h3>
+                <p>
+                    Desarrollo y Gestión de Software
+                </p>
+            </div>
+
+            <div class="dato">
+                <h3>💻 Área</h3>
+                <p>
+                    Desarrollo de Software y Tecnologías de Información
+                </p>
+            </div>
+
+            <div class="dato">
+                <h3>📚 Intereses</h3>
+                <p>
+                    Programación, bases de datos, servidores y desarrollo web.
+                </p>
+            </div>
+
+        </div>
+
     </section>
+
+
+    <!-- HABILIDADES -->
+
     <section id="habilidades">
-      <h2>Habilidades</h2>
-      <p class="intro">Tecnologías con las que he trabajado y que sigo aprendiendo:</p>
-      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>SQL</li></ul>
+
+        <h2 class="titulo">Mis habilidades</h2>
+
+        <div class="linea"></div>
+
+
+        <div class="habilidades-contenedor">
+
+            <div class="habilidad">
+                <h3>HTML</h3>
+                <p>
+                    Creación de estructuras para páginas web.
+                </p>
+            </div>
+
+
+            <div class="habilidad">
+                <h3>CSS</h3>
+                <p>
+                    Diseño y creación de interfaces web.
+                </p>
+            </div>
+
+
+            <div class="habilidad">
+                <h3>JavaScript</h3>
+                <p>
+                    Funcionalidad e interacción en aplicaciones web.
+                </p>
+            </div>
+
+
+            <div class="habilidad">
+                <h3>Node.js</h3>
+                <p>
+                    Desarrollo de aplicaciones y servidores.
+                </p>
+            </div>
+
+
+            <div class="habilidad">
+                <h3>SQL Server</h3>
+                <p>
+                    Administración y consulta de bases de datos.
+                </p>
+            </div>
+
+
+            <div class="habilidad">
+                <h3>PHP</h3>
+                <p>
+                    Desarrollo de aplicaciones web del lado del servidor.
+                </p>
+            </div>
+
+        </div>
+
     </section>
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p class="intro">¿Quieres conocer mi trabajo? Puedes agregar aquí tu correo, LinkedIn y GitHub cuando tengas tus enlaces listos.</p>
-      <button class="button" id="boton-saludo" type="button">Haz clic para saludar</button>
-      <p id="saludo" role="status" aria-live="polite"></p>
+
+
+    <!-- PROYECTOS -->
+
+    <section class="proyectos" id="proyectos">
+
+        <h2 class="titulo">Mis proyectos</h2>
+
+        <div class="linea"></div>
+
+
+        <div class="proyectos-contenedor">
+
+
+            <div class="proyecto">
+
+                <h3>Tour Virtual</h3>
+
+                <p>
+                    Proyecto enfocado en crear una experiencia web que
+                    permita recorrer y conocer diferentes áreas de una
+                    ubicación mediante un tour virtual interactivo.
+                </p>
+
+                <div class="tecnologias">
+                    HTML • CSS • JavaScript • Node.js
+                </div>
+
+            </div>
+
+
+            <div class="proyecto">
+
+                <h3>Sistemas Web</h3>
+
+                <p>
+                    Desarrollo de sistemas web destinados a almacenar,
+                    administrar y consultar información utilizando bases
+                    de datos.
+                </p>
+
+                <div class="tecnologias">
+                    Node.js • SQL Server • JavaScript
+                </div>
+
+            </div>
+
+
+            <div class="proyecto">
+
+                <h3>Inventario de Equipos</h3>
+
+                <p>
+                    Sistema diseñado para registrar y administrar equipos
+                    tecnológicos, permitiendo llevar un mejor control del
+                    inventario.
+                </p>
+
+                <div class="tecnologias">
+                    PHP • SQL Server • HTML • CSS
+                </div>
+
+            </div>
+
+
+        </div>
+
     </section>
-  </main>
-  <footer><div class="wrap">© <span id="anio"></span> César Sáenz · Hecho con HTML, CSS y JavaScript.</div></footer>
-  <script>
-    document.getElementById('anio').textContent = new Date().getFullYear();
-    document.getElementById('boton-saludo').addEventListener('click', () => {
-      document.getElementById('saludo').textContent = '¡Hola! Gracias por visitar mi página 👋';
-    });
-  </script>
+
+
+    <!-- OBJETIVO -->
+
+    <section class="objetivo" id="objetivo">
+
+        <h2 class="titulo">Mi objetivo profesional</h2>
+
+        <div class="linea"></div>
+
+        <p>
+            Mi objetivo es continuar desarrollando mis conocimientos en el
+            área de software y tecnologías de información, participando en
+            proyectos que me permitan adquirir experiencia y crear soluciones
+            que puedan utilizarse en situaciones reales.
+        </p>
+
+        <br>
+
+        <p>
+            Busco seguir mejorando mis habilidades en programación,
+            desarrollo web, bases de datos y administración de sistemas,
+            aprendiendo constantemente nuevas tecnologías.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Tony | Presentación Personal
+        </p>
+
+    </footer>
+
 </body>
 </html>
