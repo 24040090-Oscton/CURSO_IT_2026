@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Presentación personal de César Sáenz, estudiante de desarrollo de software.">
+  <title>César Sáenz | Presentación</title>
+  <style>
+    :root { color-scheme: dark; --bg:#10131a; --card:#1b202b; --text:#f4f5f8; --muted:#aab3c1; --accent:#8ce5c4; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif; }
+    .wrap { width:min(1050px,calc(100% - 40px)); margin:auto; }
+    header { border-bottom:1px solid #303641; }
+    nav { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 0; }
+    .brand { font-weight:800; font-size:1.2rem; color:var(--accent); text-decoration:none; }
+    .links { display:flex; flex-wrap:wrap; gap:18px; }
+    a { color:inherit; }
+    .links a { text-decoration:none; color:var(--muted); }
+    .links a:hover, .links a:focus-visible { color:var(--accent); }
+    .hero { padding:105px 0 95px; }
+    .eyebrow { color:var(--accent); font-weight:700; letter-spacing:.13em; text-transform:uppercase; font-size:.8rem; }
+    h1 { font-size:clamp(2.8rem,8vw,5.8rem); line-height:1.08; letter-spacing:-.055em; margin:12px 0 18px; }
+    h1 span { color:var(--accent); }
+    .hero p { max-width:650px; color:var(--muted); font-size:1.17rem; }
+    .button { display:inline-block; margin-top:20px; padding:12px 22px; border:0; border-radius:10px; background:var(--accent); color:#10231d; font:inherit; font-weight:750; text-decoration:none; cursor:pointer; }
+    .button:hover { filter:brightness(1.1); }
+    section { padding:34px 0 54px; }
+    h2 { font-size:2rem; margin:0 0 18px; }
+    .intro { color:var(--muted); max-width:720px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:25px; }
+    .card { background:var(--card); border:1px solid #303641; border-radius:16px; padding:25px; }
+    .card h3 { margin:0 0 8px; }
+    .card p { color:var(--muted); margin:0; }
+    .tags { display:flex; flex-wrap:wrap; gap:10px; padding:0; list-style:none; }
+    .tags li { border:1px solid #425248; border-radius:999px; padding:7px 14px; color:var(--accent); }
+    footer { border-top:1px solid #303641; padding:26px 0; color:var(--muted); }
+    #saludo { min-height:1.6em; color:var(--accent); }
+    @media(max-width:700px) { .hero { padding:75px 0 55px; } .grid { grid-template-columns:1fr; } nav { align-items:flex-start; flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">CS.</a>
+      <div class="links"><a href="#sobre-mi">Sobre mí</a><a href="#habilidades">Habilidades</a><a href="#contacto">Contacto</a></div>
+    </nav>
+  </header>
+  <main class="wrap">
+    <section class="hero" id="inicio">
+      <div class="eyebrow">Hola, bienvenido a mi página</div>
+      <h1>Soy César <span>Sáenz.</span></h1>
+      <p>Estudiante de Desarrollo de Software Multiplataforma. Me gusta aprender, crear proyectos útiles y seguir creciendo como desarrollador.</p>
+      <a class="button" href="#sobre-mi">Conoce más sobre mí</a>
+    </section>
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p class="intro">Estoy terminando mi TSU en Desarrollo de Software Multiplataforma. He practicado con tecnologías web y busco seguir mejorando mediante proyectos reales. También tengo experiencia en atención al cliente y me interesa resolver problemas de tecnología.</p>
+      <div class="grid">
+        <article class="card"><h3>Mi formación</h3><p>TSU en Desarrollo de Software Multiplataforma.</p></article>
+        <article class="card"><h3>Lo que me gusta</h3><p>Aprender programación y convertir ideas en herramientas fáciles de usar.</p></article>
+        <article class="card"><h3>Mi objetivo</h3><p>Crecer en desarrollo de software y construir un portafolio con proyectos propios.</p></article>
+      </div>
+    </section>
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <p class="intro">Tecnologías con las que he trabajado y que sigo aprendiendo:</p>
+      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>SQL</li></ul>
+    </section>
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p class="intro">¿Quieres conocer mi trabajo? Puedes agregar aquí tu correo, LinkedIn y GitHub cuando tengas tus enlaces listos.</p>
+      <button class="button" id="boton-saludo" type="button">Haz clic para saludar</button>
+      <p id="saludo" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer><div class="wrap">© <span id="anio"></span> César Sáenz · Hecho con HTML, CSS y JavaScript.</div></footer>
+  <script>
+    document.getElementById('anio').textContent = new Date().getFullYear();
+    document.getElementById('boton-saludo').addEventListener('click', () => {
+      document.getElementById('saludo').textContent = '¡Hola! Gracias por visitar mi página 👋';
+    });
+  </script>
+</body>
+</html>
